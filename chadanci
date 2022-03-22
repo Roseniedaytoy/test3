@@ -3,26 +3,41 @@
 
 int main()
 {
-	printf("Please input a sentence:\n");
-	char s[1000];
-	gets(s);
-	printf("Please input a word:\n");
-	char w[10];
-	gets(w);
-	strlwr(s);
-	strlwr(w);
-	int wlen=strlen(w);
-	int slen=strlen(s);
-	int cnt=0;
+	int sum=0,cnt=0,j,i,s,w;
 
-	for(int i=0;i<slen-wlen;i++)
+	printf("Please input a sentence：\n");
+	char a[1000];
+
+	strlwr(gets(a));
+	printf("Please input a word：\n");
+	char b[10];
+
+	strlwr(gets(b));
+	s=strlen(a);
+	w=strlen(b);
+	for(i=0;i<s;i++)
 	{
-		char tempw[1000];
-		tempw[999];
-		for(int j=0;j<wlen;j++) tempw[j]=s[i+j];
-		if(strcmp(tempw,w)==0) cnt++;
+		if(a[i]==b[0])
+		{
+			for(j=0;j<w;j++)
+			{
+				if(a[i+j]==b[j])
+				{
+					cnt++;
+				}
+				else
+				{
+					cnt=0;
+					continue;
+				}
+			}
+			if(cnt==w)
+			{
+				sum++;
+			}
+		}
 	}
-	printf("%d",cnt);
+	printf("%d words in tatal",sum);
 
 	return 0;
 }
