@@ -25,18 +25,11 @@ int main()
 				{
 					cnt++;
 				}
-				else
-				{
-					cnt=0;
-					continue;
-				}
-			}
-			if(cnt==w)
-			{
-				sum++;
+				
 			}
 		}
 	}
+	sum=cnt/w;
 	printf("%d words in tatal",sum);
 
 	return 0;
